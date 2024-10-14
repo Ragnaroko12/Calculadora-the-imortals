@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Treinamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculadora de Treinamento</h1>
+        
+        <input type="number" name="valor A" id="A" placeholder="Digite quantas horas de treinamento terá">
+        <input type="number" name="Valor S" id="S" placeholder="Digite sua stamina total">
+        <input type="number" name="Valor F" id="F" placeholder="Digite o valor do atributo a ser melhorado">
+        <input type="number" name="Valor P" id="P" placeholder="Digite o número de pausas">
+        
+        <label for="Tp">Tempo de pausa:</label>
+        <select id="Tp">
+            <option value="1">1 hora</option>
+            <option value="4">4 horas</option>
+            <option value="8">8 horas</option>
+        </select>
+        
+        <button onclick="CALCULAR()">Calcular</button>
+
+        <div id="result" class="result">
+            <p><strong>Tempo restante de treino:</strong> <span id="tempo"></span></p>
+            <p><strong>Stamina restante:</strong> <span id="stamina"></span></p>
+            <p><strong>Pontos de treino:</strong> <span id="pontosTreino"></span></p>
+            <p><strong>Pontos de cansaço acumulados:</strong> <span id="pontosCansaco"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
