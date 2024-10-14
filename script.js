@@ -96,6 +96,6 @@ function CALCULAR() {
     document.getElementById("result").style.display = "block";
     document.getElementById("tempo").textContent = (T / 60).toFixed(2) + " horas";
     document.getElementById("stamina").textContent = S.toFixed(2);
-    document.getElementById("pontosTreino").textContent = pp + " pontos de atributo: " + Pt.toFixed(2);
+    document.getElementById("pontosTreino").textContent = pp + " pontos de treino: " + Pt.toFixed(2) + " pontos de atributo";
     document.getElementById("pontosCansaco").textContent = Pc.toFixed(2);
 }
