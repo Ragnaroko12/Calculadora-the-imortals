@@ -7,11 +7,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px; /* Adiciona padding para celulares */
+  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
 .container {
   background-color: #ffffff;
-  padding: 40px;
+  padding: 30px;
   border-radius: 15px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   max-width: 500px;
@@ -21,8 +23,8 @@ body {
 
 h1 {
   color: #4a4a4a;
-  margin-bottom: 30px;
-  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-size: 2.2rem; /* Tamanho ajustado para dispositivos móveis */
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -30,7 +32,8 @@ h1 {
 /* Tabela de seleção de horas */
 #tabelaDescanso {
   display: flex;
-  justify-content: space-between; /* Espaçamento entre colunas */
+  flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
+  justify-content: center; /* Centraliza os checkboxes */
   margin: 20px 0;
 }
 
@@ -38,6 +41,8 @@ h1 {
   display: flex;
   flex-direction: column; /* Alinha os checkboxes verticalmente */
   align-items: flex-start; /* Alinha os checkboxes à esquerda */
+  width: 45%; /* Ajusta a largura para caber duas colunas */
+  margin: 5px; /* Espaçamento entre colunas */
 }
 
 .coluna label {
@@ -96,30 +101,22 @@ button:hover {
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
-  .container {
-    padding: 20px;
-  }
-
   h1 {
-    font-size: 2rem; /* Tamanho da fonte do título */
+    font-size: 2rem; /* Tamanho do título ajustado */
   }
 
   input[type="number"], button {
     font-size: 16px; /* Tamanho da fonte dos inputs e botões */
-    padding: 10px; /* Padding ajustado */
-  }
-
-  .coluna {
-    width: 50%; /* Ajusta a largura das colunas para ocupar metade da tela */
-    margin: 0 auto; /* Centraliza as colunas */
+    padding: 10px; /* Ajusta o padding */
   }
 
   #tabelaDescanso {
-    flex-direction: column; /* Muda a direção para coluna em dispositivos menores */
-    align-items: center; /* Centraliza os checkboxes */
+    flex-direction: row; /* Mantém as colunas lado a lado */
+    justify-content: center; /* Centraliza as colunas */
   }
 
-  #tabelaDescanso label {
-    margin: 5px; /* Espaciamento mais uniforme entre os checkboxes */
+  .coluna {
+    width: 40%; /* A largura das colunas é ajustada */
+    margin: 5px; /* Espaçamento entre as colunas */
   }
 }
