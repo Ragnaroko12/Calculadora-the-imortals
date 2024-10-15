@@ -2,13 +2,13 @@
 body {
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
-  height: 100vh;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px; /* Adiciona padding para celulares */
-  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100vh; /* Altura da tela */
 }
 
 .container {
@@ -16,8 +16,8 @@ body {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  width: 100%;
+  max-width: 500px; /* Largura máxima */
+  width: 100%; /* Largura 100% */
   text-align: center;
 }
 
@@ -32,16 +32,16 @@ h1 {
 /* Tabela de seleção de horas */
 #tabelaDescanso {
   display: flex;
-  flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
-  justify-content: center; /* Centraliza os checkboxes */
+  flex-wrap: wrap; /* Permite que as colunas se ajustem ao tamanho da tela */
+  justify-content: center; /* Centraliza as colunas */
   margin: 20px 0;
 }
 
 .coluna {
   display: flex;
-  flex-direction: column; /* Alinha os checkboxes verticalmente */
+  flex-direction: column; /* Colunas verticais */
   align-items: flex-start; /* Alinha os checkboxes à esquerda */
-  width: 45%; /* Ajusta a largura para caber duas colunas */
+  width: 45%; /* Ajusta a largura das colunas para caberem lado a lado */
   margin: 5px; /* Espaçamento entre colunas */
 }
 
@@ -89,7 +89,7 @@ button:hover {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
-  display: none;
+  display: none; /* Inicialmente invisível */
 }
 
 .result p {
@@ -99,24 +99,24 @@ button:hover {
   font-weight: 500;
 }
 
-/* Responsividade para dispositivos móveis */
+/* Responsividade */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2rem; /* Tamanho do título ajustado */
+    font-size: 1.8rem; /* Tamanho do título ajustado */
+  }
+
+  .coluna {
+    width: 100%; /* Colunas ocupam 100% da largura em telas pequenas */
+    margin: 5px 0; /* Margem reduzida entre colunas */
+  }
+
+  #tabelaDescanso {
+    flex-direction: column; /* Colunas em linha única em telas pequenas */
+    align-items: center; /* Centraliza as colunas */
   }
 
   input[type="number"], button {
     font-size: 16px; /* Tamanho da fonte dos inputs e botões */
     padding: 10px; /* Ajusta o padding */
-  }
-
-  #tabelaDescanso {
-    flex-direction: row; /* Mantém as colunas lado a lado */
-    justify-content: center; /* Centraliza as colunas */
-  }
-
-  .coluna {
-    width: 40%; /* A largura das colunas é ajustada */
-    margin: 5px; /* Espaçamento entre as colunas */
   }
 }
