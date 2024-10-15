@@ -2,7 +2,7 @@ function CALCULAR() {
     let perca = 0;
     let Pt = 0;
     let Pc = 0;
-    let T, S, F, P, Tp;
+    let T, S, F, P;
     let X = 0;
     let X1 = 0;
     let pp = 0;
@@ -13,8 +13,24 @@ function CALCULAR() {
     T = parseFloat(A.value) * 60; // Converte horas para minutos
     S = parseFloat(document.getElementById('S').value); // Stamina total
     F = parseFloat(document.getElementById('F').value); // Valor do atributo
-    P = parseFloat(document.getElementById('P').value); // Número de pausas
-    Tp = parseFloat(document.getElementById('Tp').value); // Tempo de pausa
+    P = parseFloat(document.getElementById('numIntervalos').value); // Número de intervalos
+
+    // Obtém as horas selecionadas na tabela
+    let checkboxes = document.querySelectorAll('#tabelaDescanso input[type="checkbox"]:checked');
+    let horasSelecionadas = Array.from(checkboxes).map(checkbox => parseInt(checkbox.value));
+
+    // Calcula o tempo total de descanso baseado nas horas selecionadas
+    let horasConsecutivas = calcularHorasConsecutivas(horasSelecionadas);
+
+    // Converte o tempo de pausa para um valor baseado nas regras de 1h, 4h ou 8h
+    let Tp;
+    if (horasConsecutivas < 4) {
+        Tp = 1; // Considera como 1h
+    } else if (horasConsecutivas >= 4 && horasConsecutivas < 8) {
+        Tp = 4; // Considera como 4h
+    } else if (horasConsecutivas >= 8) {
+        Tp = 8; // Considera como 8h
+    }
 
     // Calcula os multiplicadores de stamina
     X = 0.3 * S;
@@ -98,4 +114,21 @@ function CALCULAR() {
     document.getElementById("stamina").textContent = S.toFixed(2);
     document.getElementById("pontosTreino").textContent = pp + " pontos de treino: " + Pt.toFixed(2) + " pontos de atributo";
     document.getElementById("pontosCansaco").textContent = Pc.toFixed(2);
+}
+
+// Função para calcular horas consecutivas selecionadas
+function calcularHorasConsecutivas(horasSelecionadas) {
+    let maxConsecutivas = 0;
+    let consecutivas = 1;
+
+    for (let i = 1; i < horasSelecionadas.length; i++) {
+        if (horasSelecionadas[i] === horasSelecionadas[i - 1] + 1) {
+            consecutivas++;
+        } else {
+            consecutivas = 1;
+        }
+        maxConsecutivas = Math.max(maxConsecutivas, consecutivas);
+    }
+
+    return maxConsecutivas;
 }
