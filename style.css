@@ -93,3 +93,33 @@ button:hover {
   color: #4a4a4a;
   font-weight: 500;
 }
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem; /* Tamanho da fonte do título */
+  }
+
+  input[type="number"], button {
+    font-size: 16px; /* Tamanho da fonte dos inputs e botões */
+    padding: 10px; /* Padding ajustado */
+  }
+
+  .coluna {
+    width: 50%; /* Ajusta a largura das colunas para ocupar metade da tela */
+    margin: 0 auto; /* Centraliza as colunas */
+  }
+
+  #tabelaDescanso {
+    flex-direction: column; /* Muda a direção para coluna em dispositivos menores */
+    align-items: center; /* Centraliza os checkboxes */
+  }
+
+  #tabelaDescanso label {
+    margin: 5px; /* Espaciamento mais uniforme entre os checkboxes */
+  }
+}
