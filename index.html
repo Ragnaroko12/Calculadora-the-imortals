@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Treinamento</title>
     <link rel="stylesheet" href="style.css">
@@ -9,19 +9,53 @@
 <body>
     <div class="container">
         <h1>Calculadora de Treinamento</h1>
-        
+
         <input type="number" name="valor A" id="A" placeholder="Digite quantas horas serão treinadas">
         <input type="number" name="Valor S" id="S" placeholder="Digite sua stamina total">
         <input type="number" name="Valor F" id="F" placeholder="Digite o valor do atributo a ser melhorado">
-        <input type="number" name="Valor P" id="P" placeholder="Digite o número de pausas">
-        
-        <label for="Tp">Tempo de pausa:</label>
-        <select id="Tp">
-            <option value="1">1 hora</option>
-            <option value="4">4 horas</option>
-            <option value="8">8 horas</option>
-        </select>
-        
+
+        <!-- Tabela para seleção das horas de descanso -->
+        <label for="tempoDescanso">Selecione as horas de descanso:</label>
+        <div id="tabelaDescanso">
+            <div class="coluna">
+                <label><input type="checkbox" value="0"> 00h</label>
+                <label><input type="checkbox" value="1"> 01h</label>
+                <label><input type="checkbox" value="2"> 02h</label>
+                <label><input type="checkbox" value="3"> 03h</label>
+                <label><input type="checkbox" value="4"> 04h</label>
+                <label><input type="checkbox" value="5"> 05h</label>
+                <label><input type="checkbox" value="6"> 06h</label>
+            </div>
+            <div class="coluna">
+                <label><input type="checkbox" value="7"> 07h</label>
+                <label><input type="checkbox" value="8"> 08h</label>
+                <label><input type="checkbox" value="9"> 09h</label>
+                <label><input type="checkbox" value="10"> 10h</label>
+                <label><input type="checkbox" value="11"> 11h</label>
+                <label><input type="checkbox" value="12"> 12h</label>
+            </div>
+            <div class="coluna">
+                <label><input type="checkbox" value="13"> 13h</label>
+                <label><input type="checkbox" value="14"> 14h</label>
+                <label><input type="checkbox" value="15"> 15h</label>
+                <label><input type="checkbox" value="16"> 16h</label>
+                <label><input type="checkbox" value="17"> 17h</label>
+                <label><input type="checkbox" value="18"> 18h</label>
+            </div>
+            <div class="coluna">
+                <label><input type="checkbox" value="19"> 19h</label>
+                <label><input type="checkbox" value="20"> 20h</label>
+                <label><input type="checkbox" value="21"> 21h</label>
+                <label><input type="checkbox" value="22"> 22h</label>
+                <label><input type="checkbox" value="23"> 23h</label>
+                <label><input type="checkbox" value="23"> 24h</label>
+            </div>
+        </div>
+
+        <!-- Campo para número de intervalos -->
+        <label for="numIntervalos">Digite o número de intervalos:</label>
+        <input type="number" id="numIntervalos" placeholder="Número de intervalos">
+
         <button onclick="CALCULAR()">Calcular</button>
 
         <div id="result" class="result">
