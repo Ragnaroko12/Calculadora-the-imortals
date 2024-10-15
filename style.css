@@ -6,7 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 20px; /* Padding para não deixar o conteúdo encostado nas bordas */
   box-sizing: border-box;
   height: 100vh; /* Altura da tela */
 }
@@ -24,7 +24,7 @@ body {
 h1 {
   color: #4a4a4a;
   margin-bottom: 20px;
-  font-size: 2.2rem; /* Tamanho ajustado para dispositivos móveis */
+  font-size: 2rem; /* Ajuste do tamanho para desktops */
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -41,7 +41,7 @@ h1 {
   display: flex;
   flex-direction: column; /* Colunas verticais */
   align-items: flex-start; /* Alinha os checkboxes à esquerda */
-  width: 45%; /* Ajusta a largura das colunas para caberem lado a lado */
+  width: 45%; /* Largura das colunas */
   margin: 5px; /* Espaçamento entre colunas */
 }
 
@@ -102,7 +102,7 @@ button:hover {
 /* Responsividade */
 @media (max-width: 768px) {
   h1 {
-    font-size: 1.8rem; /* Tamanho do título ajustado */
+    font-size: 1.8rem; /* Tamanho do título ajustado para dispositivos móveis */
   }
 
   .coluna {
